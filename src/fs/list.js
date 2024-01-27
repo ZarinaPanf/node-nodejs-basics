@@ -1,5 +1,12 @@
+import fs from 'node:fs';
+
 const list = async () => {
-    // Write your code here 
+   const dirName = './files';
+   const filenames = fs.readdirSync(dirName);
+   filenames.forEach((file) => {
+    console.log(file);
+   });
+    if(!dirName) console.error('FS operation failed');
 };
 
 await list();
